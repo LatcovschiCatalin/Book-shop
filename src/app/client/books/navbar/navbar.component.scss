@@ -1,0 +1,85 @@
+@import "src/assets/styles/global";
+
+.nav {
+  .left-side {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      width: 50px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    .title {
+      font-size: 21px;
+    }
+  }
+
+  width: 100%;
+  color: $text;
+  position: fixed;
+  box-shadow: 0 0.5rem 1rem 0 $shadow;
+  padding: 2.5rem 1.5rem;
+  background-color: $bg2;
+  z-index: 124;
+  display: flex;
+  max-height: 80px;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  display: none;
+  color: $text;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 12px !important;
+}
+
+.mat-form-field-appearance-legacy {
+  &:hover {
+    background: $bg1 !important;
+  }
+
+}
+
+.mat-form-field-wrapper {
+  padding: 0 !important;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+  min-width: 60px !important;
+  width: fit-content;
+  border: 1px solid $active;
+  border-radius: 5px;
+}
+
+
+.mat-select-panel:not([class*=mat-elevation-z]) {
+  background: $bg1 !important;
+}
+
+.mat-option-text {
+  color: $text !important;
+}
+
+.mat-select-arrow {
+  color: $text !important;
+
+}
+
+.select-label {
+  color: $text !important;
+}
+
+.mat-select-value {
+  color: $text;
+}
+
+
+
