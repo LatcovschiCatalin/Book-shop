@@ -14,3 +14,93 @@
   margin-top: 104px;
 
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  margin-bottom: 30px;
+  color: $text;
+  border-bottom: 1px solid $bg1;
+
+  .section-title {
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+  }
+}
+
+.outlined {
+  color: $bg2;
+  -webkit-text-stroke: .2px $text;
+}
+
+
+.insert {
+  padding: 1rem 1.5rem;
+}
+
+.item-content {
+  background-color: $bg2;
+  border-radius: 5px;
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+a,
+li {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.line {
+  margin-top: 2rem !important;
+}
+
+.form-group {
+  display: grid;
+}
+
+.img-button {
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid $text;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+
+  img {
+    width: 32px;
+  }
+}
+
+.bottom {
+  margin-bottom: 20px;
+}
+
+.mat-paginator-container {
+  align-items: baseline !important;
+}
+
+
+.line {
+  width: 100%;
+  height: 1px;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  background: $bg1;
+}

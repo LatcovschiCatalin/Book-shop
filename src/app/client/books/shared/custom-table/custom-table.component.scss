@@ -1,0 +1,211 @@
+@import "src/assets/styles/global";
+@import "../../table/table.component";
+
+.table {
+  width: 100%;
+  background-color: $bg2;
+  color: $bg1;
+  border-radius: 10px;
+
+  .columns-name {
+    padding-top: 10px;
+  }
+
+  .th-content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .sort-img {
+    width: 18px;
+  }
+
+  th,
+  tr,
+  td {
+    color: $text;
+  }
+
+  th {
+    font-size: 18px;
+    font-weight: 400;
+    background-color: $bg2;
+    padding: 0;
+  }
+
+
+  td,
+  th {
+    padding: 1.25rem !important;
+    vertical-align: middle;
+  }
+
+  tr, th, td {
+    border: 1px solid $select-color;
+  }
+
+  tr {
+    height: 30px;
+
+    &:nth-child(odd) {
+      background-color: $odd-color;
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+
+    img {
+      cursor: pointer;
+      width: 32px;
+
+      &:nth-child(2) {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+.paginator {
+  background: $bg2;
+  color: $text;
+}
+
+.mat-select-value {
+  color: $text;
+}
+
+button {
+  cursor: pointer;
+
+  &:hover {
+    border: none;
+  }
+}
+
+.search-section {
+  display: flex;
+}
+
+
+.sort {
+  margin-bottom: 30px;
+
+  .option-title {
+    font-size: 21px;
+  }
+
+  .arrange-array {
+    margin-bottom: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .sort-buttons {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .search {
+      width: 200px;
+      outline: none;
+      padding: 5px 0;
+      margin-right: 10px;
+      color: $text;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid $text;
+
+      &:focus {
+        border-bottom: 1px solid $active;
+      }
+
+      &::placeholder {
+        color: $text;
+      }
+    }
+  }
+
+
+  .sort-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .condition {
+    margin-top: 20px;
+    font-size: 21px;
+  }
+}
+
+.clear {
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid $clear;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin-left: 15px;
+
+  img {
+    width: 32px;
+  }
+}
+
+th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
+  width: 126px;
+}
+
+.img-column {
+  width: 150px;
+}
+
+.unfounded {
+  font-size: 21px;
+  color: $text;
+}
+
+
+.custom-input {
+  @include text;
+  @include input-padding;
+  background: $input-bg;
+  backdrop-filter: $backdrop-filter;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  color: $input-color;
+
+  &::placeholder {
+    @include text;
+    color: $input-color;
+  }
+}
+
+.errors {
+  position: relative;
+  margin-bottom: 25px;
+
+  .error {
+    position: absolute;
+    color: red;
+    margin-top: 5px;
+  }
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .custom-input {
+    margin-right: 20px;
+  }
+}
+

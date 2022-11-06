@@ -10,6 +10,8 @@ import {FormsModule} from "@angular/forms";
 import {FooterComponent} from './footer/footer.component';
 import {TableModule} from "./table/table.module";
 import {ServicesModule} from "../services/services.module";
+import {CrudService} from "../../server/crud/crud.service";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -20,13 +22,14 @@ import {ServicesModule} from "../services/services.module";
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
     BooksRoutingModule,
     MatSelectModule,
     FormsModule,
     TableModule,
     ServicesModule,
   ],
-  providers: [CookieService]
+  providers: [CookieService, CrudService]
 })
 export class BooksModule {
 }

@@ -1,0 +1,117 @@
+<div class="item-content">
+  <div class="header">
+    <form [formGroup]="customForm" class="form">
+
+      <div class="form-control" *ngFor="let item of formData; let i=index;"
+           [ngClass]="{'invalid': customForm.get(item.key)?.invalid && (customForm.get(item.key)?.dirty || customForm.get(item.key)?.touched)}">
+        <input class="custom-input"
+               [type]="'text'"
+               [formControlName]="item.key"
+               [placeholder]="'type ' + item.key"
+        />
+        <div
+          *ngIf="customForm.get(item.key)?.invalid && (customForm.get(item.key)?.dirty || customForm.get(item.key)?.touched)"
+          class="errors">
+          <div class="error">
+            <div *ngIf="customForm.get(item.key)?.errors?.[formData[i].validators.type]">
+              {{formData[i].validators.message}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="button" (click)="onAction('get')">Add</div>
+
+  </div>
+  <div class="smart-table">
+    <div class="sort">
+      <div class="arrange-array">
+        <div class="sort-buttons">
+          <div class="img-button" (click)="showSort(true)">
+            <img [src]="'assets/icons/' + mode + '/sort.svg'" alt="sort">
+          </div>
+          <div class="clear" *ngIf="show_sort && data?.length>0"
+               (click)="showSort(false)">
+            <img [src]="'assets/icons/' + mode + '/clear.svg'" alt="clear">
+          </div>
+        </div>
+        <div class="search-section">
+          <input matInput [placeholder]="'Search...'" class="search" [(ngModel)]="searchTerm"
+                 (keyup.enter)="search()">
+          <div class="img-button" (click)="search()">
+            <img [src]="'assets/icons/' + mode + '/search.svg'" alt="search"></div>
+        </div>
+      </div>
+    </div>
+    <table
+      mat-table
+      [dataSource]="pageData?pageData:changedData?changedData:data"
+      class="mat-elevation-z8 table"
+      *ngIf="data?.length>0  && changedData.length>0; else noTableData"
+    >
+
+      <div class="columns" *ngFor="let column of sourceColumns">
+        <ng-container [matColumnDef]="column.key">
+          <th class="columns-name"
+
+              mat-header-cell
+              *matHeaderCellDef
+              (click)="sortData(column.key)"
+              [ngStyle]="{width:fieldWidth + 'px', cursor:show_sort ? 'pointer' : ''}"
+          >
+            <div class="th-content">
+              {{ column.name}}
+              <img class="sort-img" *ngIf="column.key === sort; else asc"
+                   [src]="'assets/icons/' + mode + '/' + order.toLowerCase() +'.svg'" alt="sort">
+              <ng-template #asc>
+                <img class="sort-img" *ngIf="show_sort" [src]="'assets/icons/' + mode + '/des.svg'" alt="des">
+              </ng-template>
+            </div>
+
+          </th>
+          <td mat-cell *matCellDef="let el"
+              [ngStyle]="{width:fieldWidth + 'px'}"
+          >
+
+<!--            <ng-template #normal>-->
+              <div>
+                {{ el[column.key] }}
+              </div>
+<!--            </ng-template>-->
+
+
+          </td>
+        </ng-container>
+      </div>
+
+      <div class="columns">
+        <ng-container [matColumnDef]="'actions'" *ngIf="tableConfig?.actions?.length">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let el">
+            <div class="actions">
+              <div class="button" (click)="onAction(action.key, el.id)"
+                   *ngFor="let action of tableConfig?.actions">{{action['name']}}</div>
+            </div>
+          </td>
+        </ng-container>
+      </div>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <mat-paginator class="paginator"
+                   [length]="this.changedData.length"
+                   [pageIndex]="page - 1"
+                   [pageSizeOptions]="limit"
+                   [pageSize]="limit_docs"
+                   (page)="onPaginateChange($event)"
+                   *ngIf="changedData?.length>0"
+                   aria-label="Select page">
+    </mat-paginator>
+
+    <ng-template #noTableData>
+      <div class="unfounded">
+        No data found.
+      </div>
+    </ng-template>
+  </div>
+</div>
