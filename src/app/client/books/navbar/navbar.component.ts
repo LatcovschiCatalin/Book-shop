@@ -34,7 +34,7 @@ export class NavbarComponent implements OnInit {
 
   selected = 'dark'
   data = {
-    title: "Gold Books"
+    title: "Book price"
   }
   modes = [
     {
