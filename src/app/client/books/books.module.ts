@@ -8,6 +8,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {CookieService} from "ngx-cookie-service";
 import {FormsModule} from "@angular/forms";
 import { FooterComponent } from './footer/footer.component';
+import {TableModule} from "./table/table.module";
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { FooterComponent } from './footer/footer.component';
     BooksRoutingModule,
     MatSelectModule,
     FormsModule,
+    TableModule,
   ],
   providers: [CookieService]
 })
