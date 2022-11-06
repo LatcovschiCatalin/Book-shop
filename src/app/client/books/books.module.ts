@@ -7,8 +7,9 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {MatSelectModule} from "@angular/material/select";
 import {CookieService} from "ngx-cookie-service";
 import {FormsModule} from "@angular/forms";
-import { FooterComponent } from './footer/footer.component';
+import {FooterComponent} from './footer/footer.component';
 import {TableModule} from "./table/table.module";
+import {ServicesModule} from "../services/services.module";
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import {TableModule} from "./table/table.module";
     MatSelectModule,
     FormsModule,
     TableModule,
+    ServicesModule,
   ],
   providers: [CookieService]
 })
