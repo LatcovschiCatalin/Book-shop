@@ -1,0 +1,107 @@
+:root {
+  --primary-bg: #151a30;
+  --secondary-bg: #222b45;
+  --text: #fff;
+  --shadow: #1a1f33;
+  --select: #151a30;
+  --odd: #192038;
+  --input-bg: rgba(255, 255, 255, 0.3)
+}
+
+
+$bg1: var(--primary-bg);
+$bg2: var(--secondary-bg);
+$text: var(--text);
+$shadow: var(--shadow);
+$active: #36f;
+$select-color: var(--select);
+$odd-color: var(--odd);
+$clear: #ff0000;
+$input-color: #cdcdcd;
+$input-bg: var(--input-bg);
+$backdrop-filter: blur(15px);
+$letter-spacing: 0.04em;
+$font-family: 'Poppins', sans-serif;
+$font-style: normal;
+$breakpoint-desktop: 1440px;
+$breakpoint-big-tablet: 1024px;
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 500px;
+
+
+@mixin my-30($property) {
+
+  @media (min-width: $breakpoint-big-tablet) {
+    #{$property}: 30px;
+  }
+
+  @media (max-width: $breakpoint-big-tablet) and (min-width: $breakpoint-tablet) {
+    #{$property}: 25px;
+  }
+
+  @media (max-width: $breakpoint-tablet) and (min-width: $breakpoint-mobile) {
+    #{$property}: 20px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    #{$property}: 15px;
+  }
+}
+
+@mixin input-padding() {
+
+  @media (min-width: $breakpoint-mobile) {
+    padding: 9px 12px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 7px 9px;
+  }
+}
+
+@mixin text() {
+
+  @media (min-width: $breakpoint-mobile) {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+
+@mixin min-title() {
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 21px;
+    line-height: 30px;
+  }
+}
+
+@mixin text-styles() {
+  font-family: $font-family;
+  font-style: $font-style;
+  letter-spacing: $letter-spacing;
+}
+
+button {
+  background: transparent;
+  border: none;
+}
+
+.button {
+  cursor: pointer;
+  border: 1px solid $text;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 21px;
+  color: $text;
+  margin: 0 10px;
+}
