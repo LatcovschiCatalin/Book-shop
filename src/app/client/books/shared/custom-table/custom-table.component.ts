@@ -29,6 +29,7 @@ export class CustomTableComponent implements OnInit, OnDestroy {
   limit = [10, 20, 50, 100];
   limit_docs = 10;
   page = 1;
+  add = false;
   data: any;
   changedData: any;
   pageData: any;
@@ -40,7 +41,7 @@ export class CustomTableComponent implements OnInit, OnDestroy {
   width = window.innerWidth - 370;
   fieldWidth: any;
   mode = '';
-  id = '';
+  id = '-1';
   // @ts-ignore
   obj: Book;
   validators = {
@@ -191,13 +192,35 @@ export class CustomTableComponent implements OnInit, OnDestroy {
   }
 
   onAction(key: any, id?: any) {
-    if (key.toLowerCase() === 'delete') {
-      this.onDelete(id);
-    } else if (key.toLowerCase() === 'edit' || key.toLowerCase() === 'get') {
-      // this.qpService.updateParam('id', id);
-      // this.submit();
-      // this.qpService.deleteParam('id');
-      // this.getData();
+    switch (key.toLowerCase()) {
+      case 'delete': {
+        this.onDelete(id);
+        break;
+      }
+      case 'add': {
+        this.qpService.deleteParam('id');
+        this.id = '-1';
+        if (this.add) {
+          this.submit();
+        } else {
+          this.refreshForm();
+        }
+        this.add = true;
+        break;
+      }
+      case 'edit': {
+        this.add = false;
+        this.id = id;
+        this.refreshForm();
+        this.qpService.updateParam('id', id);
+        break;
+      }
+      case 'save': {
+        this.submit();
+        this.qpService.deleteParam('id');
+        this.id = '-1';
+        break;
+      }
     }
   }
 
@@ -208,16 +231,18 @@ export class CustomTableComponent implements OnInit, OnDestroy {
     } else {
       // @ts-ignore
       this.obj = this.customForm.value;
-      if (this.id) {
+      if (this.id != '-1') {
         this.service.put(this.obj, this.id).subscribe(() => {
           this.getData();
           this.refreshForm();
+          this.id = '-1';
         });
 
       } else {
         this.service.post(this.obj).subscribe(() => {
           this.getData();
           this.refreshForm();
+          this.add = false;
         });
 
       }
@@ -226,11 +251,28 @@ export class CustomTableComponent implements OnInit, OnDestroy {
   }
 
   refreshForm() {
-    this.customForm = this.formBuilder.group({
-      title: ['', Validators.required],
-      author: ['', Validators.required],
-      price: ['', Validators.required],
-    });
+    let data: Book = {
+      title: '',
+      author: '',
+      price: ''
+    };
+    if (this.id != '-1') {
+      this.service.getById(this.id).subscribe((res) => {
+        data = res;
+        this.customForm = this.formBuilder.group({
+          title: [data.title, Validators.required],
+          author: [data.author, Validators.required],
+          price: [data.price, Validators.required],
+        });
+
+      })
+    } else {
+      this.customForm = this.formBuilder.group({
+        title: ['', Validators.required],
+        author: ['', Validators.required],
+        price: ['', Validators.required],
+      });
+    }
   }
 
   ngOnDestroy() {

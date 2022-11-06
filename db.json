@@ -1,24 +1,5 @@
 {
-  "posts": [
-    {
-      "title": "eeeeww",
-      "author": "eeee",
-      "price": "www",
-      "id": 3
-    },
-    {
-      "title": "eee",
-      "author": "ee",
-      "price": "eeee",
-      "id": 4
-    },
-    {
-      "title": "ssss",
-      "author": "ddddd",
-      "price": "df",
-      "id": 5
-    }
-  ],
+  "posts": [],
   "comments": [],
   "profile": {
     "name": "typicode"
