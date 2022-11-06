@@ -1,0 +1,10 @@
+<footer class="footer">
+  <div class="message"> Created with love by <b>Latcovschi Catalin</b></div>
+  <div class="contacts">
+    <div class="app" *ngFor="let app of media">
+      <a [href]="app['link']">
+        <img [src]="'assets/icons/' + mode + '/' + app['key'] + '.svg'" [alt]="app['key']">
+      </a>
+    </div>
+  </div>
+</footer>

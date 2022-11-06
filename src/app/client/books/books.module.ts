@@ -7,12 +7,14 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {MatSelectModule} from "@angular/material/select";
 import {CookieService} from "ngx-cookie-service";
 import {FormsModule} from "@angular/forms";
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
   declarations: [
     BooksComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
