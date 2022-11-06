@@ -1,5 +1,78 @@
 {
-  "posts": [],
+  "posts": [
+    {
+      "title": "Tata bogat. Tata sarac.",
+      "author": "Robert T. Kiyosaki",
+      "price": "193 mdl",
+      "id": 1
+    },
+    {
+      "title": "Arta manipularii",
+      "author": "Kevin Dutton",
+      "price": "146 mdl",
+      "id": 2
+    },
+    {
+      "title": "Inteligenta emotionala",
+      "author": "Daniel Goleman",
+      "price": "214 mdl",
+      "id": 3
+    },
+    {
+      "title": "Atitudinea este totul. Ed V ",
+      "author": "Jeff Keller",
+      "price": "143 mdl",
+      "id": 4
+    },
+    {
+      "title": "Puterea prezentului. Ed. a VI-a ",
+      "author": "Eckhart Tolle",
+      "price": "166 mdl",
+      "id": 5
+    },
+    {
+      "title": "Nascuta din foc ",
+      "author": "Aisling Fowler",
+      "price": "211 mdl",
+      "id": 6
+    },
+    {
+      "title": "Scrisori remarcabile. Razboi ",
+      "author": "Shaun Usher",
+      "price": "179 mdl",
+      "id": 7
+    },
+    {
+      "title": "Flasneta Babel",
+      "author": "Teodor Duna",
+      "price": "121 mdl",
+      "id": 8
+    },
+    {
+      "title": "Noapte buna, domnule Lenin",
+      "author": "Tiziano Terzani",
+      "price": "278 mdl",
+      "id": 9
+    },
+    {
+      "title": "Lista lui Schindler",
+      "author": "Thomas Keneally",
+      "price": "150 mdl",
+      "id": 10
+    },
+    {
+      "title": "O parabola",
+      "author": "William Faulkner",
+      "price": "81 mdl",
+      "id": 11
+    },
+    {
+      "title": "Regele arinilor",
+      "author": "Michel Tournier",
+      "price": "82 mdl",
+      "id": 12
+    }
+  ],
   "comments": [],
   "profile": {
     "name": "typicode"

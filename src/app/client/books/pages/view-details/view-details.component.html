@@ -1,0 +1,14 @@
+<div class="details">
+  <div class="item" *ngFor="let key of keys">
+    <div class="values" *ngIf="key != 'id'">
+      <div class="title">
+        {{key}}:
+      </div>
+      <div class="value">
+        {{data[key]}}
+      </div>
+      <br>
+    </div>
+  </div>
+  <div class="button" (click)="back()">Go Back</div>
+</div>

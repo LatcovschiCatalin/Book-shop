@@ -8,7 +8,6 @@ import {MatSelectModule} from "@angular/material/select";
 import {CookieService} from "ngx-cookie-service";
 import {FormsModule} from "@angular/forms";
 import {FooterComponent} from './footer/footer.component';
-import {TableModule} from "./table/table.module";
 import {ServicesModule} from "../services/services.module";
 import {CrudService} from "../../server/crud/crud.service";
 import {HttpClientModule} from "@angular/common/http";
@@ -26,7 +25,6 @@ import {HttpClientModule} from "@angular/common/http";
     BooksRoutingModule,
     MatSelectModule,
     FormsModule,
-    TableModule,
     ServicesModule,
   ],
   providers: [CookieService, CrudService]

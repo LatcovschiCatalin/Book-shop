@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {QueryParamsService} from "../../services/query-params.service";
-import {CrudService} from "../../../server/crud/crud.service";
+import {QueryParamsService} from "../../../services/query-params.service";
+import {CrudService} from "../../../../server/crud/crud.service";
 import {CookieService} from "ngx-cookie-service";
 
 @Component({

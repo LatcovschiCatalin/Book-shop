@@ -6,11 +6,12 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {HttpClientModule} from "@angular/common/http";
+import {ViewDetailsModule} from "../pages/view-details/view-details.module";
 
 
 @NgModule({
   declarations: [
-    CustomTableComponent
+    CustomTableComponent,
   ],
   exports: [
     CustomTableComponent
@@ -22,7 +23,8 @@ import {HttpClientModule} from "@angular/common/http";
     FormsModule,
     ReactiveFormsModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    ViewDetailsModule,
   ]
 })
 export class SharedModule {

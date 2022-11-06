@@ -1,5 +1,5 @@
 @import "src/assets/styles/global";
-@import "../../table/table.component";
+@import "../../pages/table/table.component";
 
 .table {
   width: 100%;
@@ -209,3 +209,8 @@ form {
   }
 }
 
+.header {
+  .button{
+    margin: 0;
+  }
+}

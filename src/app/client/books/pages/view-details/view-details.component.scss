@@ -1,0 +1,37 @@
+@import "src/assets/styles/global";
+
+.details {
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+  .title {
+    font-size: 21px;
+    color: $text;
+    text-transform: capitalize;
+  }
+
+  .value {
+    font-size: 18px;
+    margin-top: 7px;
+    color: $active;
+    margin-left: 20px;
+  }
+
+  .button {
+    margin: 0;
+    width: fit-content;
+    min-width: 150px;
+    text-align: center;
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+

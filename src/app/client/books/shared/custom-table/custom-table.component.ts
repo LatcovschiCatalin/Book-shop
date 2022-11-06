@@ -1,7 +1,7 @@
 import {Component, Input, OnDestroy, OnInit, ViewEncapsulation,} from '@angular/core';
 import {QueryParamsService} from "../../../services/query-params.service";
 import {Subscription} from "rxjs";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {CookieService} from "ngx-cookie-service";
 import {FormBuilder, Validators} from "@angular/forms";
 import {CrudService} from "../../../../server/crud/crud.service";
@@ -80,7 +80,7 @@ export class CustomTableComponent implements OnInit, OnDestroy {
   });
 
 
-  constructor(private service: CrudService, private formBuilder: FormBuilder, private qpService: QueryParamsService, private route: ActivatedRoute, private cookieService: CookieService) {
+  constructor(private router: Router, private service: CrudService, private formBuilder: FormBuilder, private qpService: QueryParamsService, private route: ActivatedRoute, private cookieService: CookieService) {
   }
 
   ngOnInit(): void {
@@ -219,6 +219,10 @@ export class CustomTableComponent implements OnInit, OnDestroy {
         this.submit();
         this.qpService.deleteParam('id');
         this.id = '-1';
+        break;
+      }
+      case 'view': {
+        this.router.navigate(['/details/' + id]);
         break;
       }
     }
